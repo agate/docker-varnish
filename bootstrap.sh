@@ -15,9 +15,12 @@ fi
 set -e
 
 exec bash -c \
-  "exec varnishd \
-  -j unix,user=varnish \
+  "exec /usr/sbin/varnishd \
+  -j unix,user=vcache \
   -F \
+  -a :6081 \
+  -T localhost:6082 \
   -f $VCL_CONFIG \
+  -S /etc/varnish/secret \
   -s malloc,$CACHE_SIZE \
   $VARNISHD_PARAMS"
