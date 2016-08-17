@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 MAINTAINER agate<agate.hao@gmail.com>
 
 RUN apt-get update
-RUN apt-get install -y varnish
+RUN apt-get install -y varnish curl
 
 ADD bootstrap.sh /bootstrap.sh
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 [[ $VCL_CONFIG == http* ]] && \
-  curl -s $VCL > /etc/varnish/custom.vcl && \
-  VCL_CONFIG="/etc/custom.vcl"
+  curl -s $VCL_CONFIG > /etc/varnish/custom.vcl && \
+  VCL_CONFIG="/etc/varnish/custom.vcl"
 
 [[ $START_SCRIPT == http* ]] && \
   curl -s $START_SCRIPT > /start_script && \
